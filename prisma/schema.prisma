@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Conversions {
+  id             String @id @default(uuid())
+  originalCoin   String
+  conversionCoin String
+  originalValue  String
+  finalValue     String
+}
